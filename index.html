@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>LOCAL PLUMBER | Plumber Springs, Plumber Brakpan, Plumber Benoni, Plumber Boksburg, Plumber Germiston, Plumber Alberton, Plumber Edenvale</title>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18081385262"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18081385262');
+</script>
+
+<script>
+function trackWhatsApp() {
+  gtag('event', 'conversion', {
+    'send_to': 'AW-18081385262/WHATSAPP_CLICK'
+  });
+}
+</script>
+
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+
+  gtag('event', 'conversion', {
+    'send_to': 'AW-18081385262/PHONE_CLICK',
+    'event_callback': callback
+  });
+
+  return false;
+}
+</script>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f6f7fb;
+
+  /* ✅ FIX: prevents footer being hidden behind sticky buttons */
+  padding-bottom: 90px;
+}
+
+/* TOP BAR */
+.topbar {
+  background: #2563eb;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  font-weight: 700;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  overflow: hidden;
+
+  background-image: url("https://cdn.pixabay.com/photo/2017/03/14/11/47/males-2142888_1280.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+  z-index: 0;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+}
+
+/* TEXT */
+.badge {
+  display: inline-block;
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+h1 {
+  font-size: 48px;
+  margin: 4px 0 8px 0;
+}
+
+p {
+  font-size: 18px;
+  color: #e5e7eb;
+}
+
+/* BUTTONS */
+.buttons {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 22px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.call { background: #2563eb; color: white; }
+.whatsapp { background: #22c55e; color: white; }
+
+.btn.call,
+.btn.whatsapp {
+  position: relative;
+  animation: heroPulse 6s infinite;
+}
+
+.btn.whatsapp {
+  animation-delay: 3s;
+}
+
+@keyframes heroPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 12px rgba(37, 99, 235, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+  }
+}
+
+/* FEATURES */
+.features {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  justify-items: center;
+}
+
+/* HEADING */
+.features-title {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+/* CARDS */
+.card {
+  background: white;
+  padding: 22px;
+  border-radius: 14px;
+  text-align: center;
+  transition: all 1s ease;
+  cursor: pointer;
+}
+
+.features .card:hover {
+  background: #2563eb;
+  color: white;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
+}
+
+/* AREAS */
+.areas {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+/* FOOTER */
+footer {
+  background: #2b2b2b;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* STICKY BUTTONS */
+.sticky {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+}
+
+.sticky a {
+  flex: 1;
+  text-align: center;
+  padding: 16px;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
+
+.call { background: #2563eb; }
+.whatsapp { background: #22c55e; }
+
+.sticky a.call {
+  position: relative;
+  animation: pulseCall 2s infinite;
+}
+
+@keyframes pulseCall {
+  0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.6); transform: scale(1); }
+  50% { box-shadow: 0 0 0 10px rgba(37, 99, 235, 0); transform: scale(1.03); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); transform: scale(1); }
+}
+
+/* MOBILE */
+@media(max-width: 768px){
+  h1 {
+    font-size: 36px;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="topbar">
+  LOCAL PLUMBER IN YOUR AREA - RESPONSE WITHIN 60 MINUTES
+</div>
+
+<section class="hero">
+
+  <div class="hero-text">
+
+    <div class="badge">FAST RESPONSE PLUMBER</div>
+
+    <h1>LOCAL PLUMBER NEAR YOU</h1>
+
+    <p>NO CALL OUT FEES • WE COVER THE WHOLE NEIGHBOURHOOD • YOU WILL BE HELPED WITHIN 1 HOUR</p>
+
+    <div class="buttons">
+      <a href="tel:+27727417844" class="btn call" onclick="gtag_report_conversion()">📞 Call Now</a>
+      <a href="https://wa.me/27727417844" class="btn whatsapp" onclick="trackWhatsApp()">💬 WhatsApp</a>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="features">
+
+  <div class="features-title">WHY CHOOSE US</div>
+
+  <div class="card">24/7 PLUMBER</div>
+  <div class="card">LOCAL PLUMBER</div>
+  <div class="card">RELIABLE PLUMBER</div>
+  <div class="card">SAME DAY PLUMBER</div>
+  <div class="card">UNBLOCK DRAIN</div>
+  <div class="card">BURST PIPE REPAIRS</div>
+  <div class="card">GEYSER REPAIRS</div>
+  <div class="card">NEW FIXTURES</div>
+
+</section>
+
+<section class="areas">
+  <h2>AREAS WITH LOCAL PLUMBERS</h2>
+
+  <div class="grid" style="
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:12px;
+    padding:20px;
+  ">
+
+    <div class="card">BENONI</div>
+    <div class="card">BOKSBURG</div>
+    <div class="card">SPRINGS</div>
+    <div class="card">BRAKPAN</div>
+    <div class="card">GERMISTON</div>
+    <div class="card">ALBERTON</div>
+    <div class="card">KEMPTON PARK</div>
+    <div class="card">EDENVALE</div>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 EAST RAND LOCAL PLUMBER JOHAN POTGIETER
+</footer>
+
+<div class="sticky">
+  <a href="tel:+27727417844" class="call">Call</a>
+  <a href="https://wa.me/27727417844" class="whatsapp">WhatsApp</a>
+</div>
+
+</body>
+</html>
