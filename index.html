@@ -1,330 +1,505 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-<title>LOCAL PLUMBER | Plumber Springs, Plumber Brakpan, Plumber Benoni, Plumber Boksburg, Plumber Germiston, Plumber Alberton, Plumber Edenvale</title>
+    <title>24/7 Emergency Plumber East Rand | Fast Local Plumbing</title>
+    <meta name="description" content="Local plumber in Springs, Benoni, Boksburg, Brakpan & Germiston. Fast 24/7 response for burst pipes, blocked drains & geyser repairs.">
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18081385262"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome (Still used for UI elements like the sticky footer) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  gtag('config', 'AW-18081385262');
-</script>
-
-<script>
-function trackWhatsApp() {
-  gtag('event', 'conversion', {
-    'send_to': 'AW-18081385262/WHATSAPP_CLICK'
-  });
-}
-</script>
-
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
+    <!-- SCHEMA MARKUP -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PlumbingService",
+      "name": "East Rand Emergency Plumbing",
+      "image": "https://images.unsplash.com/photo-1585704032915-c3400ca199e7",
+      "telephone": "+27727417844",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "East Rand",
+        "addressRegion": "Gauteng",
+        "addressCountry": "ZA"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "areaServed": ["Springs", "Benoni", "Boksburg", "Brakpan", "Germiston"]
     }
-  };
+    </script>
 
-  gtag('event', 'conversion', {
-    'send_to': 'AW-18081385262/PHONE_CLICK',
-    'event_callback': callback
-  });
+    <!-- GOOGLE ANALYTICS / ADS TRACKING -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18081385262"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18081385262');
 
-  return false;
-}
-</script>
+      function trackCall(source){
+        gtag('event','conversion', {
+            'send_to':'AW-18081385262/PHONE_CLICK'
+        });
+        gtag('event','call_click', {
+            'event_category':'conversion',
+            'event_label':source
+        });
+      }
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f6f7fb;
+      function trackWhatsApp(source){
+        gtag('event','conversion', {
+            'send_to':'AW-18081385262/WHATSAPP_CLICK'
+        });
+        setTimeout(function(){ 
+            window.location.href = "https://wa.me/27727417844"; 
+        }, 300);
+        return false; 
+      }
+    </script>
 
-  /* ✅ FIX: prevents footer being hidden behind sticky buttons */
-  padding-bottom: 90px;
-}
+    <style>
+        /* --- RESET & VARIABLES --- */
+        :root {
+            --primary-blue: #0284c7; 
+            --primary-dark: #0c4a6e;
+            --accent-green: #25D366; 
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
 
-/* TOP BAR */
-.topbar {
-  background: #2563eb;
-  color: white;
-  text-align: center;
-  padding: 12px;
-  font-weight: 700;
-}
+        /* SMOOTH SCROLLING */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 20px;
+        }
 
-/* HERO */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 20px;
-  overflow: hidden;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  background-image: url("https://cdn.pixabay.com/photo/2017/03/14/11/47/males-2142888_1280.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-bottom: 80px; 
+        }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.45);
-  z-index: 0;
-}
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
 
-.hero-text {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: white;
-}
+        /* Highlight animation */
+        :target {
+            animation: highlightPulse 1.5s ease-in-out;
+            border-color: var(--primary-blue);
+            z-index: 10;
+        }
 
-/* TEXT */
-.badge {
-  display: inline-block;
-  background: #dbeafe;
-  color: #1d4ed8;
-  padding: 6px 14px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 600;
-  margin-bottom: 4px;
-}
+        @keyframes highlightPulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7); }
+            50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(37, 99, 235, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+        }
 
-h1 {
-  font-size: 48px;
-  margin: 4px 0 8px 0;
-}
+        /* --- TOP BAR --- */
+        .topbar {
+            background: var(--primary-dark);
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
 
-p {
-  font-size: 18px;
-  color: #e5e7eb;
-}
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.7)),
+                        url("https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=1200&auto=format&fit=crop") center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+        }
 
-/* BUTTONS */
-.buttons {
-  margin-top: 25px;
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
+        .hero h1 {
+            font-size: 2.5rem; 
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
 
-.btn {
-  padding: 14px 22px;
-  border-radius: 12px;
-  font-weight: 700;
-  text-decoration: none;
-}
+        .hero p {
+            font-size: 1.125rem;
+            color: #e2e8f0;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
 
-.call { background: #2563eb; color: white; }
-.whatsapp { background: #22c55e; color: white; }
+        .hero-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 350px;
+            margin: 0 auto;
+        }
 
-.btn.call,
-.btn.whatsapp {
-  position: relative;
-  animation: heroPulse 6s infinite;
-}
+        /* --- BUTTONS --- */
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: transform 0.2s;
+            cursor: pointer;
+            text-align: center;
+        }
 
-.btn.whatsapp {
-  animation-delay: 3s;
-}
+        .btn:active { transform: scale(0.98); }
 
-@keyframes heroPulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
-  }
-  50% {
-    transform: scale(1.05);
-    box-shadow: 0 0 0 12px rgba(37, 99, 235, 0);
-  }
-  100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
-  }
-}
+        .btn-call { background: var(--white); color: var(--primary-dark); }
+        .btn-call:hover { background: #f1f5f9; }
 
-/* FEATURES */
-.features {
-  max-width: 1100px;
-  margin: auto;
-  padding: 40px 20px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  justify-items: center;
-}
+        .btn-wa { background: var(--accent-green); color: white; }
+        .btn-wa:hover { background: #1ebc57; }
 
-/* HEADING */
-.features-title {
-  grid-column: 1 / -1;
-  text-align: center;
-  font-size: 28px;
-  font-weight: 800;
-  margin-bottom: 10px;
-  color: #111;
-}
+        /* --- TRUST STRIP --- */
+        .trust-strip {
+            background: white;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+        
+        .trust-item i { color: #f59e0b; margin-right: 5px; }
 
-/* CARDS */
-.card {
-  background: white;
-  padding: 22px;
-  border-radius: 14px;
-  text-align: center;
-  transition: all 1s ease;
-  cursor: pointer;
-}
+        /* --- SECTIONS --- */
+        .section { padding: 60px 20px; }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
 
-.features .card:hover {
-  background: #2563eb;
-  color: white;
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
-}
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
 
-/* AREAS */
-.areas {
-  text-align: center;
-  padding: 50px 20px;
-}
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
 
-/* FOOTER */
-footer {
-  background: #2b2b2b;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
+        .section-header p {
+            color: var(--text-light);
+        }
 
-/* STICKY BUTTONS */
-.sticky {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  display: flex;
-}
+        /* --- ICON STYLES (Shared by Services and Features) --- */
+        .real-icon-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 16px; /* Rounded Square */
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            margin-bottom: 20px;
+            border: 2px solid white;
+        }
 
-.sticky a {
-  flex: 1;
-  text-align: center;
-  padding: 16px;
-  font-weight: 700;
-  color: white;
-  text-decoration: none;
-}
+        /* --- SERVICES GRID --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
 
-.call { background: #2563eb; }
-.whatsapp { background: #22c55e; }
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
-.sticky a.call {
-  position: relative;
-  animation: pulseCall 2s infinite;
-}
+        .service-card:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-5px);
+        }
 
-@keyframes pulseCall {
-  0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.6); transform: scale(1); }
-  50% { box-shadow: 0 0 0 10px rgba(37, 99, 235, 0); transform: scale(1.03); }
-  100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); transform: scale(1); }
-}
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
 
-/* MOBILE */
-@media(max-width: 768px){
-  h1 {
-    font-size: 36px;
-  }
-}
-</style>
+        .tap-text {
+            font-size: 0.9rem;
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-top: auto;
+        }
 
+        /* Emergency Card Highlight */
+        .service-card.emergency {
+            background: #eff6ff;
+            border: 2px solid var(--primary-blue);
+        }
+
+        /* --- WHY CHOOSE US --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-box {
+            background: white;
+            padding: 25px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        .feature-box h4 { margin-bottom: 5px; color: var(--text-dark); }
+        .feature-box p { font-size: 0.9rem; color: var(--text-light); }
+
+        /* --- CTA SECTION --- */
+        .cta-section {
+            background: var(--primary-dark);
+            color: white;
+            text-align: center;
+            border-radius: 20px;
+            margin: 40px 20px;
+            padding: 50px 20px;
+        }
+        
+        .cta-section h2 { margin-bottom: 20px; }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.85rem;
+            border-top: 1px solid #1e293b;
+        }
+        
+        footer a { color: #cbd5e1; margin: 0 10px; text-decoration: underline; }
+
+        /* --- STICKY FOOTER --- */
+        .sticky-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            z-index: 9999;
+            box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+        }
+
+        .sticky-btn {
+            flex: 1;
+            padding: 18px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .sticky-call { background: var(--primary-blue); }
+        .sticky-wa { background: var(--accent-green); }
+
+        /* --- RESPONSIVE --- */
+        @media (min-width: 768px) {
+            .hero h1 { font-size: 3.5rem; }
+            .hero-btns { flex-direction: row; justify-content: center; max-width: 600px; }
+            .btn { width: 250px; }
+        }
+    </style>
 </head>
-
 <body>
 
-<div class="topbar">
-  LOCAL PLUMBER IN YOUR AREA - RESPONSE WITHIN 60 MINUTES
-</div>
-
-<section class="hero">
-
-  <div class="hero-text">
-
-    <div class="badge">FAST RESPONSE PLUMBER</div>
-
-    <h1>LOCAL PLUMBER NEAR YOU</h1>
-
-    <p>NO CALL OUT FEES • WE COVER THE WHOLE NEIGHBOURHOOD • YOU WILL BE HELPED WITHIN 1 HOUR</p>
-
-    <div class="buttons">
-      <a href="tel:+27727417844" class="btn call" onclick="gtag_report_conversion()">📞 Call Now</a>
-      <a href="https://wa.me/27727417844" class="btn whatsapp" onclick="trackWhatsApp()">💬 WhatsApp</a>
+    <div class="topbar">
+        <i class="fa-solid fa-bolt"></i> 24/7 Emergency Plumber • Fast Response Within 60 Minutes
     </div>
 
-  </div>
+    <!-- HERO -->
+    <section class="hero">
+        <h1>LOCAL PLUMBERS<br>IN YOUR AREA NOW</h1>
+        <p>Fast, reliable local plumbing in Springs, Benoni, Boksburg, Brakpan & Germiston.</p>
+        
+        <div class="hero-btns">
+            <a href="tel:+27727417844" class="btn btn-call" onclick="trackCall('Hero');">
+                <i class="fa-solid fa-phone"></i> Call Now
+            </a>
+            <a href="javascript:void(0);" class="btn btn-wa" onclick="trackWhatsApp('Hero');">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+            </a>
+        </div>
+    </section>
 
-</section>
+    <!-- TRUST SIGNALS -->
+    <div class="trust-strip">
+        <div class="trust-item"><i class="fa-solid fa-star"></i> 4.8/5 Rating</div>
+        <div class="trust-item"><i class="fa-solid fa-check-circle"></i> 800+ Jobs Done</div>
+        <div class="trust-item"><i class="fa-solid fa-clock"></i> 60 Min Response</div>
+    </div>
 
-<section class="features">
+    <!-- SERVICES WITH REAL PHOTO ICONS -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Plumbing Services</h2>
+                <p>Tap a service below to get immediate assistance.</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- SITELINK 1: Blocked Drains -->
+                <a href="tel:+27727417844" id="blockeddrain" class="service-card" onclick="trackCall('Service_Drains');">
+                    <img src="https://cdn.create.vista.com/api/media/small/328092516/stock-photo-cropped-view-plumber-holding-plunger-toilet" alt="Blocked Drain Pipe" class="real-icon-img">
+                    <h3>Blocked Drains</h3>
+                    <p>Fast drain cleaning and unblocking.</p>
+                    <div class="tap-text"><i class="fa-solid fa-phone"></i> Tap to Call</div>
+                </a>
 
-  <div class="features-title">WHY CHOOSE US</div>
+                <!-- SITELINK 2: Burst Pipes -->
+                <a href="tel:+27727417844" id="burstpipes" class="service-card" onclick="trackCall('Service_Burst');">
+                    <img src="https://cdn.create.vista.com/api/media/medium/331448642/stock-photo-residential-water-pipe-break-repair-white-tape?token=" alt="Leaking Pipe" class="real-icon-img">
+                    <h3>Burst Pipes</h3>
+                    <p>Emergency repairs to stop water damage.</p>
+                    <div class="tap-text"><i class="fa-solid fa-phone"></i> Tap to Call</div>
+                </a>
 
-  <div class="card">24/7 PLUMBER</div>
-  <div class="card">LOCAL PLUMBER</div>
-  <div class="card">RELIABLE PLUMBER</div>
-  <div class="card">SAME DAY PLUMBER</div>
-  <div class="card">UNBLOCK DRAIN</div>
-  <div class="card">BURST PIPE REPAIRS</div>
-  <div class="card">GEYSER REPAIRS</div>
-  <div class="card">NEW FIXTURES</div>
+                <!-- SITELINK 3: Geyser Repairs -->
+                <a href="tel:+27727417844" id="geysers" class="service-card" onclick="trackCall('Service_Geyser');">
+                    <img src="https://cdn.create.vista.com/api/media/small/396455554/stock-photo-flange-installation-boiler-housing-details-home-water-heater-hand-tools" alt="Geyser Element Burner" class="real-icon-img">
+                    <h3>Geyser Repairs</h3>
+                    <p>Installations & repairs for all models.</p>
+                    <div class="tap-text"><i class="fa-solid fa-phone"></i> Tap to Call</div>
+                </a>
 
-</section>
+                <!-- SITELINK 4: Leak Detection -->
+                <a href="tel:+27727417844" id="leakdetection" class="service-card" onclick="trackCall('Service_Leaks');">
+                    <img src="https://cdn.create.vista.com/api/media/small/757339372/stock-photo-tap-dripping-leakage-garden" alt="Water Tap Leak" class="real-icon-img">
+                    <h3>Leak Detection</h3>
+                    <p>We find and fix hidden leaks fast.</p>
+                    <div class="tap-text"><i class="fa-solid fa-phone"></i> Tap to Call</div>
+                </a>
 
-<section class="areas">
-  <h2>AREAS WITH LOCAL PLUMBERS</h2>
+                <!-- SITELINK 5: Toilet Repairs -->
+                <a href="tel:+27727417844" id="toiletrepairs" class="service-card" onclick="trackCall('Service_Toilet');">
+                    <img src="https://cdn.create.vista.com/api/media/small/81517178/stock-photo-repair-broken-toilet" alt="Modern Toilet" class="real-icon-img">
+                    <h3>Toilet Repairs</h3>
+                    <p>Fixing clogs, leaks, and flush issues.</p>
+                    <div class="tap-text"><i class="fa-solid fa-phone"></i> Tap to Call</div>
+                </a>
 
-  <div class="grid" style="
-    max-width:1100px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-    gap:12px;
-    padding:20px;
-  ">
+                <!-- SITELINK 6: 24/7 Emergency -->
+                <a href="tel:+27727417844" id="emergency" class="service-card emergency" onclick="trackCall('Service_Emergency');">
+                    <img src="https://cdn.create.vista.com/api/media/small/515052014/stock-vector-24-7-service-concept-24-7-open-neon-icon-support-service-icon-vector-stock-illustration" alt="Emergency Lights" class="real-icon-img">
+                    <h3>24/7 Emergency</h3>
+                    <p>Priority response for plumbing crises.</p>
+                    <div class="tap-text"><i class="fa-solid fa-phone"></i> Tap to Call</div>
+                </a>
+            </div>
+        </div>
+    </section>
 
-    <div class="card">BENONI</div>
-    <div class="card">BOKSBURG</div>
-    <div class="card">SPRINGS</div>
-    <div class="card">BRAKPAN</div>
-    <div class="card">GERMISTON</div>
-    <div class="card">ALBERTON</div>
-    <div class="card">KEMPTON PARK</div>
-    <div class="card">EDENVALE</div>
+    <!-- WHY CHOOSE US WITH REAL PHOTO ICONS -->
+    <section class="section" style="background: white;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Us</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <img src="https://cdn.create.vista.com/api/media/small/38761529/stock-photo-24h-service-icon" alt="Clock 24/7" class="real-icon-img">
+                    <h4>24/7 Availability</h4>
+                    <p>We don't sleep so you can.</p>
+                </div>
+                <div class="feature-box">
+                    <img src="https://cdn.create.vista.com/api/media/small/647488706/stock-vector-support-local-business-rubber-grunge-stamp-seal-vector" alt="Certified Plumber" class="real-icon-img">
+                    <h4>Local Plumber</h4>
+                    <p>We make sure you save Money.</p>
+                </div>
+                <div class="feature-box">
+                    <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=200&q=80" alt="Fair Pricing Money" class="real-icon-img">
+                    <h4>Fair Pricing</h4>
+                    <p>No hidden call-out fees.</p>
+                </div>
+                <div class="feature-box">
+                    <img src="https://cdn.create.vista.com/api/media/small/190367906/stock-vector-express-delivery-guarantee-label-vector-illustration" alt="Plumbing Van" class="real-icon-img">
+                    <h4>Service within 60-Minutes</h4>
+                    <p>Local plumbers mean FAST SERVICE.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  </div>
-</section>
+    <!-- BIG CTA -->
+    <div class="container">
+        <section class="cta-section">
+            <h2>Plumbing Emergency?</h2>
+            <p style="margin-bottom: 20px; color: #fffffff;">Don't wait, water damage gets worse every minute.</p>
+            <a href="tel:+27727417844" class="btn btn-call" onclick="trackCall('Bottom_CTA');" style="background: white; color: var(--primary-dark);">
+                <i class="fa-solid fa-phone"></i> Call +27 72 741 7844
+            </a>
+        </section>
+    </div>
 
-<footer>
-  © 2026 EAST RAND LOCAL PLUMBER JOHAN POTGIETER
-</footer>
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 East Rand Emergency Plumbing. All rights reserved.</p>
+        <p style="margin-top: 10px;">
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms of Service</a>
+        </p>
+    </footer>
 
-<div class="sticky">
-  <a href="tel:+27727417844" class="call">Call</a>
-  <a href="https://wa.me/27727417844" class="whatsapp">WhatsApp</a>
-</div>
+    <!-- STICKY MOBILE FOOTER -->
+    <div class="sticky-footer">
+        <a href="tel:+27727417844" class="sticky-btn sticky-call" onclick="trackCall('Sticky_Call');">
+            <i class="fa-solid fa-phone"></i> CALL NOW
+        </a>
+        <a href="javascript:void(0);" class="sticky-btn sticky-wa" onclick="trackWhatsApp('Sticky_WA');">
+            <i class="fa-brands fa-whatsapp"></i> WHATSAPP
+        </a>
+    </div>
 
 </body>
 </html>
