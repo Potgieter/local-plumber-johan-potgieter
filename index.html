@@ -41,32 +41,32 @@
     }
     </script>
 
-    <!-- GOOGLE ANALYTICS / ADS TRACKING -->
+    <!-- UPDATED GOOGLE ADS TRACKING -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18081385262"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+      
+      // 1. TRACK PAGE VISIT
       gtag('config', 'AW-18081385262');
 
+      // 2. TRACK PHONE CALL CLICKS
       function trackCall(source){
         gtag('event','conversion', {
-            'send_to':'AW-18081385262/PHONE_CLICK'
+            'send_to':'AW-18081385262/INSERT_CALL_CONVERSION_LABEL_HERE'
         });
-        gtag('event','call_click', {
-            'event_category':'conversion',
-            'event_label':source
-        });
+        // Optional: Debug console log
+        console.log('Call tracked from: ' + source);
       }
 
+      // 3. TRACK WHATSAPP CLICKS
       function trackWhatsApp(source){
         gtag('event','conversion', {
-            'send_to':'AW-18081385262/WHATSAPP_CLICK'
+            'send_to':'AW-18081385262/INSERT_WHATSAPP_CONVERSION_LABEL_HERE'
         });
-        setTimeout(function(){ 
-            window.location.href = "https://wa.me/27727417844"; 
-        }, 300);
-        return false; 
+        console.log('WhatsApp tracked from: ' + source);
+        // Note: We no longer need to redirect manually because the href is now a real link.
       }
     </script>
 
@@ -367,7 +367,8 @@
             <a href="tel:+27727417844" class="btn btn-call" onclick="trackCall('Hero');">
                 <i class="fa-solid fa-phone"></i> Call Now
             </a>
-            <a href="javascript:void(0);" class="btn btn-wa" onclick="trackWhatsApp('Hero');">
+            <!-- Changed href to actual WhatsApp link for better compatibility -->
+            <a href="https://wa.me/27727417844" target="_blank" class="btn btn-wa" onclick="trackWhatsApp('Hero');">
                 <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
             </a>
         </div>
@@ -496,7 +497,7 @@
         <a href="tel:+27727417844" class="sticky-btn sticky-call" onclick="trackCall('Sticky_Call');">
             <i class="fa-solid fa-phone"></i> CALL NOW
         </a>
-        <a href="javascript:void(0);" class="sticky-btn sticky-wa" onclick="trackWhatsApp('Sticky_WA');">
+        <a href="https://wa.me/27727417844" target="_blank" class="sticky-btn sticky-wa" onclick="trackWhatsApp('Sticky_WA');">
             <i class="fa-brands fa-whatsapp"></i> WHATSAPP
         </a>
     </div>
