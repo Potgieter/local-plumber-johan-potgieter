@@ -8,11 +8,10 @@
     <title>24/7 Emergency Plumber East Rand | Fast Local Plumbing</title>
     <meta name="description" content="Local plumber in Springs, Benoni, Boksburg, Brakpan & Germiston. Fast 24/7 response for burst pipes, blocked drains & geyser repairs.">
 
-    <!-- Google Fonts: Inter (Added display=swap for speed) -->
+    <!-- Google Fonts: Inter (display=swap) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome (Note: For a perfect 100/100 score, you would remove this and paste SVG icons directly) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- FontAwesome REMOVED - Replaced with Inline SVGs for Speed -->
 
     <!-- SCHEMA MARKUP -->
     <script type="application/ld+json">
@@ -74,6 +73,14 @@
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
 
+        /* Inline SVG Styling */
+        .icon-svg {
+            width: 1.2em;
+            height: 1.2em;
+            fill: currentColor;
+            vertical-align: middle;
+        }
+
         /* Highlight animation */
         :target {
             animation: highlightPulse 1.5s ease-in-out;
@@ -100,10 +107,10 @@
 
         /* --- HERO SECTION --- */
         .hero {
-            /* Added min-height to reserve space while image loads */
+            /* Optimized for speed: min-height added, image width reduced to 800px */
             min-height: 500px; 
             background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.7)),
-                        url("https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=1200&auto=format&fit=crop") center/cover no-repeat;
+                        url("https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=70&w=800&auto=format&fit=crop") center/cover no-repeat;
             color: white;
             text-align: center;
             padding: 80px 20px;
@@ -168,7 +175,8 @@
             color: var(--text-light);
         }
         
-        .trust-item i { color: #f59e0b; margin-right: 5px; }
+        .trust-item { display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .trust-item svg { color: #f59e0b; }
 
         /* --- SECTIONS --- */
         .section { padding: 60px 20px; }
@@ -241,6 +249,9 @@
             color: var(--primary-blue);
             font-weight: 600;
             margin-top: auto;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         /* Emergency Card Highlight */
@@ -322,13 +333,20 @@
             .hero h1 { font-size: 3.5rem; }
             .hero-btns { flex-direction: row; justify-content: center; max-width: 600px; }
             .btn { width: 250px; }
+            /* High res image for desktop */
+            .hero {
+                 background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.7)),
+                            url("https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=1200&auto=format&fit=crop") center/cover no-repeat;
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="topbar">
-        <i class="fa-solid fa-bolt"></i> 24/7 Emergency Plumber • Fast Response Within 60 Minutes
+        <!-- BOLT SVG -->
+        <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L3 14h9l-1 8h10L21 8h-9l1-8z"></path></svg>
+        24/7 Emergency Plumber • Fast Response Within 60 Minutes
     </div>
 
     <!-- HERO -->
@@ -337,20 +355,36 @@
         <p>Fast, reliable local plumbing in Springs, Benoni, Boksburg, Brakpan & Germiston.</p>
         
         <div class="hero-btns">
-            <a href="tel:+27727417844" class="btn btn-call">
-                <i class="fa-solid fa-phone"></i> Call Now
+            <a href="tel:+27727417844" class="btn btn-call" aria-label="Call Now">
+                <!-- PHONE SVG -->
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                Call Now
             </a>
-            <a href="https://wa.me/27727417844" target="_blank" class="btn btn-wa">
-                <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+            <a href="https://wa.me/27727417844" target="_blank" class="btn btn-wa" aria-label="WhatsApp Us">
+                <!-- WHATSAPP SVG -->
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.698c.988.567 1.941.865 2.806.865 3.178 0 5.769-2.587 5.769-5.766 0-3.18-2.591-5.767-5.769-5.767zm12 11.779c0 1.544-1.256 2.8-2.8 2.8l-11.2 0c-1.544 0-2.8-1.256-2.8-2.8l0-11.2c0-1.544 1.256-2.8 2.8-2.8l11.2 0c1.544 0 2.8 1.256 2.8 2.8l0 11.2z"/></svg>
+                WhatsApp Us
             </a>
         </div>
     </section>
 
     <!-- TRUST SIGNALS -->
     <div class="trust-strip">
-        <div class="trust-item"><i class="fa-solid fa-star"></i> 4.8/5 Rating</div>
-        <div class="trust-item"><i class="fa-solid fa-check-circle"></i> 800+ Jobs Done</div>
-        <div class="trust-item"><i class="fa-solid fa-clock"></i> 60 Min Response</div>
+        <div class="trust-item">
+            <!-- STAR SVG -->
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            4.8/5 Rating
+        </div>
+        <div class="trust-item">
+            <!-- CHECK CIRCLE SVG -->
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            800+ Jobs Done
+        </div>
+        <div class="trust-item">
+            <!-- CLOCK SVG -->
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            60 Min Response
+        </div>
     </div>
 
     <!-- SERVICES WITH REAL PHOTO ICONS -->
@@ -364,11 +398,13 @@
             <div class="services-grid">
                 <!-- SITELINK 1: Blocked Drains -->
                 <a href="tel:+27727417844" id="blockeddrain" class="service-card">
-                    <!-- Added width, height, and lazy loading -->
                     <img src="https://cdn.create.vista.com/api/media/small/328092516/stock-photo-cropped-view-plumber-holding-plunger-toilet" alt="Blocked Drain Pipe" class="real-icon-img" width="70" height="70" loading="lazy">
                     <h3>Blocked Drains</h3>
                     <p>Fast drain cleaning and unblocking.</p>
-                    <div class="tap-text"><i class="fa-solid fa-phone"></i> Tap to Call</div>
+                    <div class="tap-text">
+                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        Tap to Call
+                    </div>
                 </a>
 
                 <!-- SITELINK 2: Burst Pipes -->
@@ -376,7 +412,10 @@
                     <img src="https://cdn.create.vista.com/api/media/medium/331448642/stock-photo-residential-water-pipe-break-repair-white-tape?token=" alt="Leaking Pipe" class="real-icon-img" width="70" height="70" loading="lazy">
                     <h3>Burst Pipes</h3>
                     <p>Emergency repairs to stop water damage.</p>
-                    <div class="tap-text"><i class="fa-solid fa-phone"></i> Tap to Call</div>
+                    <div class="tap-text">
+                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        Tap to Call
+                    </div>
                 </a>
 
                 <!-- SITELINK 3: Geyser Repairs -->
@@ -384,7 +423,10 @@
                     <img src="https://cdn.create.vista.com/api/media/small/396455554/stock-photo-flange-installation-boiler-housing-details-home-water-heater-hand-tools" alt="Geyser Element Burner" class="real-icon-img" width="70" height="70" loading="lazy">
                     <h3>Geyser Repairs</h3>
                     <p>Installations & repairs for all models.</p>
-                    <div class="tap-text"><i class="fa-solid fa-phone"></i> Tap to Call</div>
+                    <div class="tap-text">
+                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        Tap to Call
+                    </div>
                 </a>
 
                 <!-- SITELINK 4: Leak Detection -->
@@ -392,7 +434,10 @@
                     <img src="https://cdn.create.vista.com/api/media/small/757339372/stock-photo-tap-dripping-leakage-garden" alt="Water Tap Leak" class="real-icon-img" width="70" height="70" loading="lazy">
                     <h3>Leak Detection</h3>
                     <p>We find and fix hidden leaks fast.</p>
-                    <div class="tap-text"><i class="fa-solid fa-phone"></i> Tap to Call</div>
+                    <div class="tap-text">
+                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        Tap to Call
+                    </div>
                 </a>
 
                 <!-- SITELINK 5: Toilet Repairs -->
@@ -400,7 +445,10 @@
                     <img src="https://cdn.create.vista.com/api/media/small/81517178/stock-photo-repair-broken-toilet" alt="Modern Toilet" class="real-icon-img" width="70" height="70" loading="lazy">
                     <h3>Toilet Repairs</h3>
                     <p>Fixing clogs, leaks, and flush issues.</p>
-                    <div class="tap-text"><i class="fa-solid fa-phone"></i> Tap to Call</div>
+                    <div class="tap-text">
+                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        Tap to Call
+                    </div>
                 </a>
 
                 <!-- SITELINK 6: 24/7 Emergency -->
@@ -408,7 +456,10 @@
                     <img src="https://cdn.create.vista.com/api/media/small/515052014/stock-vector-24-7-service-concept-24-7-open-neon-icon-support-service-icon-vector-stock-illustration" alt="Emergency Lights" class="real-icon-img" width="70" height="70" loading="lazy">
                     <h3>24/7 Emergency</h3>
                     <p>Priority response for plumbing crises.</p>
-                    <div class="tap-text"><i class="fa-solid fa-phone"></i> Tap to Call</div>
+                    <div class="tap-text">
+                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        Tap to Call
+                    </div>
                 </a>
             </div>
         </div>
@@ -450,8 +501,9 @@
         <section class="cta-section">
             <h2>Plumbing Emergency?</h2>
             <p style="margin-bottom: 20px; color: #fffffff;">Don't wait, water damage gets worse every minute.</p>
-            <a href="tel:+27727417844" class="btn btn-call" style="background: white; color: var(--primary-dark);">
-                <i class="fa-solid fa-phone"></i> Call +27 72 741 7844
+            <a href="tel:+27727417844" class="btn btn-call" style="background: white; color: var(--primary-dark);" aria-label="Call Now">
+                 <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                Call +27 72 741 7844
             </a>
         </section>
     </div>
@@ -467,11 +519,13 @@
 
     <!-- STICKY MOBILE FOOTER -->
     <div class="sticky-footer">
-        <a href="tel:+27727417844" class="sticky-btn sticky-call">
-            <i class="fa-solid fa-phone"></i> CALL NOW
+        <a href="tel:+27727417844" class="sticky-btn sticky-call" aria-label="Call Now">
+             <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            CALL NOW
         </a>
-        <a href="https://wa.me/27727417844" target="_blank" class="sticky-btn sticky-wa">
-            <i class="fa-brands fa-whatsapp"></i> WHATSAPP
+        <a href="https://wa.me/27727417844" target="_blank" class="sticky-btn sticky-wa" aria-label="WhatsApp Us">
+             <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.698c.988.567 1.941.865 2.806.865 3.178 0 5.769-2.587 5.769-5.766 0-3.18-2.591-5.767-5.769-5.767zm12 11.779c0 1.544-1.256 2.8-2.8 2.8l-11.2 0c-1.544 0-2.8-1.256-2.8-2.8l0-11.2c0-1.544 1.256-2.8 2.8-2.8l11.2 0c1.544 0 2.8 1.256 2.8 2.8l0 11.2z"/></svg>
+            WHATSAPP
         </a>
     </div>
 
