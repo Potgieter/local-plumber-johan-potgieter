@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NZ4ZZBT9');</script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -39,35 +47,6 @@
       },
       "areaServed": ["Springs", "Benoni", "Boksburg", "Brakpan", "Germiston"]
     }
-    </script>
-
-    <!-- UPDATED GOOGLE ADS TRACKING -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18081385262"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      
-      // 1. TRACK PAGE VISIT
-      gtag('config', 'AW-18081385262');
-
-      // 2. TRACK PHONE CALL CLICKS
-      function trackCall(source){
-        gtag('event','conversion', {
-            'send_to':'AW-18081385262/INSERT_CALL_CONVERSION_LABEL_HERE'
-        });
-        // Optional: Debug console log
-        console.log('Call tracked from: ' + source);
-      }
-
-      // 3. TRACK WHATSAPP CLICKS
-      function trackWhatsApp(source){
-        gtag('event','conversion', {
-            'send_to':'AW-18081385262/INSERT_WHATSAPP_CONVERSION_LABEL_HERE'
-        });
-        console.log('WhatsApp tracked from: ' + source);
-        // Note: We no longer need to redirect manually because the href is now a real link.
-      }
     </script>
 
     <style>
@@ -353,6 +332,10 @@
     </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZ4ZZBT9"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <div class="topbar">
         <i class="fa-solid fa-bolt"></i> 24/7 Emergency Plumber • Fast Response Within 60 Minutes
@@ -364,11 +347,10 @@
         <p>Fast, reliable local plumbing in Springs, Benoni, Boksburg, Brakpan & Germiston.</p>
         
         <div class="hero-btns">
-            <a href="tel:+27727417844" class="btn btn-call" onclick="trackCall('Hero');">
+            <a href="tel:+27727417844" class="btn btn-call">
                 <i class="fa-solid fa-phone"></i> Call Now
             </a>
-            <!-- Changed href to actual WhatsApp link for better compatibility -->
-            <a href="https://wa.me/27727417844" target="_blank" class="btn btn-wa" onclick="trackWhatsApp('Hero');">
+            <a href="https://wa.me/27727417844" target="_blank" class="btn btn-wa">
                 <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
             </a>
         </div>
@@ -391,7 +373,7 @@
             
             <div class="services-grid">
                 <!-- SITELINK 1: Blocked Drains -->
-                <a href="tel:+27727417844" id="blockeddrain" class="service-card" onclick="trackCall('Service_Drains');">
+                <a href="tel:+27727417844" id="blockeddrain" class="service-card">
                     <img src="https://cdn.create.vista.com/api/media/small/328092516/stock-photo-cropped-view-plumber-holding-plunger-toilet" alt="Blocked Drain Pipe" class="real-icon-img">
                     <h3>Blocked Drains</h3>
                     <p>Fast drain cleaning and unblocking.</p>
@@ -399,7 +381,7 @@
                 </a>
 
                 <!-- SITELINK 2: Burst Pipes -->
-                <a href="tel:+27727417844" id="burstpipes" class="service-card" onclick="trackCall('Service_Burst');">
+                <a href="tel:+27727417844" id="burstpipes" class="service-card">
                     <img src="https://cdn.create.vista.com/api/media/medium/331448642/stock-photo-residential-water-pipe-break-repair-white-tape?token=" alt="Leaking Pipe" class="real-icon-img">
                     <h3>Burst Pipes</h3>
                     <p>Emergency repairs to stop water damage.</p>
@@ -407,7 +389,7 @@
                 </a>
 
                 <!-- SITELINK 3: Geyser Repairs -->
-                <a href="tel:+27727417844" id="geysers" class="service-card" onclick="trackCall('Service_Geyser');">
+                <a href="tel:+27727417844" id="geysers" class="service-card">
                     <img src="https://cdn.create.vista.com/api/media/small/396455554/stock-photo-flange-installation-boiler-housing-details-home-water-heater-hand-tools" alt="Geyser Element Burner" class="real-icon-img">
                     <h3>Geyser Repairs</h3>
                     <p>Installations & repairs for all models.</p>
@@ -415,7 +397,7 @@
                 </a>
 
                 <!-- SITELINK 4: Leak Detection -->
-                <a href="tel:+27727417844" id="leakdetection" class="service-card" onclick="trackCall('Service_Leaks');">
+                <a href="tel:+27727417844" id="leakdetection" class="service-card">
                     <img src="https://cdn.create.vista.com/api/media/small/757339372/stock-photo-tap-dripping-leakage-garden" alt="Water Tap Leak" class="real-icon-img">
                     <h3>Leak Detection</h3>
                     <p>We find and fix hidden leaks fast.</p>
@@ -423,7 +405,7 @@
                 </a>
 
                 <!-- SITELINK 5: Toilet Repairs -->
-                <a href="tel:+27727417844" id="toiletrepairs" class="service-card" onclick="trackCall('Service_Toilet');">
+                <a href="tel:+27727417844" id="toiletrepairs" class="service-card">
                     <img src="https://cdn.create.vista.com/api/media/small/81517178/stock-photo-repair-broken-toilet" alt="Modern Toilet" class="real-icon-img">
                     <h3>Toilet Repairs</h3>
                     <p>Fixing clogs, leaks, and flush issues.</p>
@@ -431,7 +413,7 @@
                 </a>
 
                 <!-- SITELINK 6: 24/7 Emergency -->
-                <a href="tel:+27727417844" id="emergency" class="service-card emergency" onclick="trackCall('Service_Emergency');">
+                <a href="tel:+27727417844" id="emergency" class="service-card emergency">
                     <img src="https://cdn.create.vista.com/api/media/small/515052014/stock-vector-24-7-service-concept-24-7-open-neon-icon-support-service-icon-vector-stock-illustration" alt="Emergency Lights" class="real-icon-img">
                     <h3>24/7 Emergency</h3>
                     <p>Priority response for plumbing crises.</p>
@@ -477,7 +459,7 @@
         <section class="cta-section">
             <h2>Plumbing Emergency?</h2>
             <p style="margin-bottom: 20px; color: #fffffff;">Don't wait, water damage gets worse every minute.</p>
-            <a href="tel:+27727417844" class="btn btn-call" onclick="trackCall('Bottom_CTA');" style="background: white; color: var(--primary-dark);">
+            <a href="tel:+27727417844" class="btn btn-call" style="background: white; color: var(--primary-dark);">
                 <i class="fa-solid fa-phone"></i> Call +27 72 741 7844
             </a>
         </section>
@@ -494,10 +476,10 @@
 
     <!-- STICKY MOBILE FOOTER -->
     <div class="sticky-footer">
-        <a href="tel:+27727417844" class="sticky-btn sticky-call" onclick="trackCall('Sticky_Call');">
+        <a href="tel:+27727417844" class="sticky-btn sticky-call">
             <i class="fa-solid fa-phone"></i> CALL NOW
         </a>
-        <a href="https://wa.me/27727417844" target="_blank" class="sticky-btn sticky-wa" onclick="trackWhatsApp('Sticky_WA');">
+        <a href="https://wa.me/27727417844" target="_blank" class="sticky-btn sticky-wa">
             <i class="fa-brands fa-whatsapp"></i> WHATSAPP
         </a>
     </div>
