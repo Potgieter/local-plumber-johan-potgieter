@@ -106,12 +106,12 @@
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
 
-        /* Inline SVG Styling */
+        /* --- ICONS STYLING --- */
         .icon-svg {
             width: 1.2em;
             height: 1.2em;
-            fill: currentColor;
             vertical-align: middle;
+            display: inline-block;
         }
 
         /* Highlight animation */
@@ -141,12 +141,22 @@
         /* --- HERO SECTION --- */
         .hero {
             min-height: 500px; 
-            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.7)),
-                        url("https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=70&w=800&auto=format&fit=crop") center/cover no-repeat;
+            /* UPDATED OVERLAY: Reduced opacity to make image clearer (0.6 top -> 0.3 bottom) */
+            background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.3)),
+                        url("https://i.imgur.com/dwp0iRa.png") center/cover no-repeat;
             color: white;
             text-align: center;
             padding: 80px 20px;
             position: relative;
+        }
+
+        /* HERO LOGO STYLING */
+        .hero-logo {
+            max-width: 180px; /* Adjust width as needed */
+            height: auto;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.95); /* Stronger background for logo to pop */
+            padding: 5px;
         }
 
         .hero h1 {
@@ -154,6 +164,13 @@
             font-weight: 800;
             margin-bottom: 16px;
             line-height: 1.2;
+            display: flex;
+            flex-direction: column; /* Stack on mobile */
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            /* Text shadow to improve readability over lighter image */
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         .hero p {
@@ -161,6 +178,7 @@
             color: #e2e8f0;
             max-width: 600px;
             margin: 0 auto 30px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
         }
 
         .hero-btns {
@@ -190,9 +208,11 @@
 
         .btn-call { background: var(--white); color: var(--primary-dark); }
         .btn-call:hover { background: #f1f5f9; }
+        .btn-call svg { stroke: var(--primary-dark); } 
 
         .btn-wa { background: var(--accent-green); color: white; }
         .btn-wa:hover { background: #1ebc57; }
+        .btn-wa svg { fill: white; } /* Ensure WA icon is white */
 
         /* --- TRUST STRIP --- */
         .trust-strip {
@@ -285,6 +305,8 @@
             align-items: center;
             gap: 8px;
         }
+        
+        .tap-text svg { stroke: var(--primary-blue); }
 
         /* Emergency Card Highlight */
         .service-card.emergency {
@@ -359,17 +381,24 @@
 
         .sticky-call { background: var(--primary-blue); }
         .sticky-wa { background: var(--accent-green); }
+        .sticky-wa svg { fill: white; } /* Ensure sticky WA icon is white */
 
         /* --- RESPONSIVE --- */
         @media (min-width: 768px) {
-            .hero h1 { font-size: 3.5rem; }
+            .hero h1 { 
+                font-size: 3.5rem; 
+                flex-direction: row; /* Side by side on desktop */
+                justify-content: center;
+            }
             .hero-btns { flex-direction: row; justify-content: center; max-width: 600px; }
             .btn { width: 250px; }
             /* High res image for desktop */
             .hero {
-                 background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.7)),
+                 /* Matching lighter overlay for desktop */
+                 background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.3)),
                             url("https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=1200&auto=format&fit=crop") center/cover no-repeat;
             }
+            .hero-logo { max-width: 120px; }
         }
     </style>
     
@@ -393,25 +422,30 @@
 
     <div class="topbar">
         <!-- BOLT SVG -->
-        <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L3 14h9l-1 8h10L21 8h-9l1-8z"></path></svg>
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor" style="fill: #fbbf24;"><path d="M13 2L3 14h9l-1 8h10L21 8h-9l1-8z"></path></svg>
         24/7 Emergency Plumber • Fast Response Within 60 Minutes
     </div>
 
     <!-- HERO -->
     <section class="hero">
-        <h1>LOCAL PLUMBERS<br>IN YOUR AREA NOW</h1>
+        <h1>
+            <!-- REPLACE THE SRC BELOW WITH YOUR ACTUAL LOGO FILE URL -->
+            <img src="https://i.imgur.com/RYp7d8I.png" alt="East Rand Plumbers Logo" class="hero-logo">
+            
+            <span>LOCAL PLUMBERS<br>IN YOUR AREA NOW</span>
+        </h1>
         <p>Fast, reliable local plumbing in Springs, Benoni, Boksburg, Brakpan & Germiston.</p>
         
         <div class="hero-btns">
             <!-- Updated with onclick tracking -->
             <a href="tel:+27727417844" onclick="return gtag_report_conversion('tel:+27727417844')" class="btn btn-call" aria-label="Call Now">
-                <!-- PHONE SVG -->
-                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <!-- PHONE ICON -->
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                 Call Now
             </a>
             <a href="https://wa.me/27727417844" target="_blank" class="btn btn-wa" aria-label="WhatsApp Us">
-                <!-- WHATSAPP SVG -->
-                <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.698c.988.567 1.941.865 2.806.865 3.178 0 5.769-2.587 5.769-5.766 0-3.18-2.591-5.767-5.769-5.767zm12 11.779c0 1.544-1.256 2.8-2.8 2.8l-11.2 0c-1.544 0-2.8-1.256-2.8-2.8l0-11.2c0-1.544 1.256-2.8 2.8-2.8l11.2 0c1.544 0 2.8 1.256 2.8 2.8l0 11.2z"/></svg>
+                <!-- WHATSAPP ICON (UPDATED OFFICIAL PATH) -->
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
                 WhatsApp Us
             </a>
         </div>
@@ -421,17 +455,17 @@
     <div class="trust-strip">
         <div class="trust-item">
             <!-- STAR SVG -->
-            <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor" style="color: #f59e0b;"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
             4.8/5 Rating
         </div>
         <div class="trust-item">
             <!-- CHECK CIRCLE SVG -->
-            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-blue);"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
             800+ Jobs Done
         </div>
         <div class="trust-item">
             <!-- CLOCK SVG -->
-            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-blue);"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
             60 Min Response
         </div>
     </div>
@@ -451,7 +485,7 @@
                     <h3>Blocked Drains</h3>
                     <p>Fast drain cleaning and unblocking.</p>
                     <div class="tap-text">
-                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                         Tap to Call
                     </div>
                 </a>
@@ -473,7 +507,7 @@
                     <h3>Geyser Repairs</h3>
                     <p>Installations & repairs for all models.</p>
                     <div class="tap-text">
-                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                         Tap to Call
                     </div>
                 </a>
@@ -484,7 +518,7 @@
                     <h3>Leak Detection</h3>
                     <p>We find and fix hidden leaks fast.</p>
                     <div class="tap-text">
-                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                         Tap to Call
                     </div>
                 </a>
@@ -495,7 +529,7 @@
                     <h3>Toilet Repairs</h3>
                     <p>Fixing clogs, leaks, and flush issues.</p>
                     <div class="tap-text">
-                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                         Tap to Call
                     </div>
                 </a>
@@ -506,7 +540,7 @@
                     <h3>24/7 Emergency</h3>
                     <p>Priority response for plumbing crises.</p>
                     <div class="tap-text">
-                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                         Tap to Call
                     </div>
                 </a>
@@ -549,10 +583,10 @@
     <div class="container">
         <section class="cta-section">
             <h2>Plumbing Emergency?</h2>
-            <p style="margin-bottom: 20px; color: #fffffff;">Don't wait, water damage gets worse every minute.</p>
+            <p style="margin-bottom: 20px; color: #e2e8f0;">Don't wait, water damage gets worse every minute.</p>
             <!-- Updated with onclick tracking -->
             <a href="tel:+27727417844" onclick="return gtag_report_conversion('tel:+27727417844')" class="btn btn-call" style="background: white; color: var(--primary-dark);" aria-label="Call Now">
-                 <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 19.79 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                 <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                 Call +27 72 741 7844
             </a>
         </section>
@@ -571,11 +605,12 @@
     <div class="sticky-footer">
         <!-- Updated with onclick tracking -->
         <a href="tel:+27727417844" onclick="return gtag_report_conversion('tel:+27727417844')" class="sticky-btn sticky-call" aria-label="Call Now">
-             <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+             <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
             CALL NOW
         </a>
         <a href="https://wa.me/27727417844" target="_blank" class="sticky-btn sticky-wa" aria-label="WhatsApp Us">
-             <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.698c.988.567 1.941.865 2.806.865 3.178 0 5.769-2.587 5.769-5.766 0-3.18-2.591-5.767-5.769-5.767zm12 11.779c0 1.544-1.256 2.8-2.8 2.8l-11.2 0c-1.544 0-2.8-1.256-2.8-2.8l0-11.2c0-1.544 1.256-2.8 2.8-2.8l11.2 0c1.544 0 2.8 1.256 2.8 2.8l0 11.2z"/></svg>
+             <!-- WHATSAPP ICON (UPDATED OFFICIAL PATH) -->
+             <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
             WHATSAPP
         </a>
     </div>
