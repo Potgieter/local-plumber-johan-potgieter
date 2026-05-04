@@ -661,56 +661,57 @@
         </a>
     </div>
 
-<!-- IP FRAUD TRACKING SNIPPET (UPDATED WITH DEVICE TRACKING FIX) -->
+<!-- IP FRAUD TRACKING SNIPPET (FIXED) -->
 <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 <script>
-    const SUPABASE_URL = 'https://prslkpfjbhqadcpaapms.supabase.co';
-    const SUPABASE_KEY = 'sb_publishable_LNWAsUHvnk5mUcFsqYSMWA_9ngV1k-9';
+const SUPABASE_URL = 'https://prslkpfjbhqadcpaapms.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_LNWAsUHvnk5mUcFsqYSMWA_9ngV1k-9';
 
-    const adTracker = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+const adTracker = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-    // ==============================
-    // DEVICE ID (NEW FIX)
-    // ==============================
-    function getDeviceID() {
-        let id = localStorage.getItem("device_id");
+// DEVICE ID
+function getDeviceID() {
+    let id = localStorage.getItem("device_id");
 
-        if (!id) {
-            id = 'dev-' + Math.random().toString(36).substring(2) + Date.now();
-            localStorage.setItem("device_id", id);
-        }
-
-        return id;
+    if (!id) {
+        id = 'dev-' + Math.random().toString(36).substring(2) + Date.now();
+        localStorage.setItem("device_id", id);
     }
 
-    async function trackClick() {
+    return id;
+}
+
+// TRACK VISITOR
+async function trackClick() {
+    try {
+        let ipData = {};
+
         try {
             const res = await fetch('https://ipapi.co/json/');
-            const data = await res.json();
-
-            const device_id = getDeviceID();
-
-            await adTracker
-                .from('visitors')
-                .insert([
-                    {
-                        ip: data.ip,
-                        city: data.city,
-                        country: data.country_name,
-                        suburb: data.region,
-                        device_id: device_id,
-                        blocked: false
-                    }
-                ]);
-
-            console.log("Tracked:", data.ip, device_id);
-
+            ipData = await res.json();
         } catch (e) {
-            console.log("Tracking failed:", e);
+            console.log("IP lookup failed");
         }
-    }
 
-    trackClick();
+        const { error } = await adTracker
+            .from('visitors')
+            .insert([{
+                ip: ipData.ip || "unknown",
+                city: ipData.city || "unknown",
+                country: ipData.country_name || "unknown",
+                suburb: ipData.region || "unknown",
+                device_id: getDeviceID(),
+                blocked: false
+            }]);
+
+        if (error) console.log("Supabase error:", error);
+
+    } catch (e) {
+        console.log("Tracking failed:", e);
+    }
+}
+
+trackClick();
 </script>
 
 </body>
