@@ -661,10 +661,8 @@
         </a>
     </div>
 
-    <!-- IP FRAUD TRACKING SNIPPET -->
-    <!-- THIS LINE WAS MISSING. IT LOADS THE DATABASE TOOL -->
+    <!-- IP FRAUD TRACKING SNIPPET (UPDATED TO SEND SUBURB & TIME) -->
     <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-    
     <script>
         // SUPABASE CREDENTIALS
         const SUPABASE_URL = 'https://prslkpfjbhqadcpaapms.supabase.co';
@@ -681,7 +679,13 @@
                 await adTracker
                     .from('visitors')
                     .insert([
-                        { ip: data.ip, city: data.city, country: data.country_name, blocked: false }
+                        { 
+                            ip: data.ip, 
+                            city: data.city, 
+                            country: data.country_name, 
+                            suburb: data.region, // Suburb added
+                            blocked: false 
+                        }
                     ]);
 
                 console.log("Tracked:", data.ip);
