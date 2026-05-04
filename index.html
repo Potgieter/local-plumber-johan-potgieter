@@ -556,7 +556,7 @@
                     <div class="service-card" id="leakdetection">
                         <img src="https://cdn.create.vista.com/api/media/small/757339372/stock-photo-tap-dripping-leakage-garden" alt="Water Tap Leak" class="real-icon-img" width="70" height="70" loading="lazy">
                         <h3>Leak Detection</h3>
-                        <p>Accurate Leak Detection – Fast & Non-Invasive-High Water Bill? We Find Hidden Leaks Fast-Damp Walls or Floors? We Detect the Leak-Can’t Find the Leak? We Will.</p>
+                        <p>Accurate Leak Detection – Fast & Non-Invasive-High Water Bill? We Find Hidden Leaks Fast-Damp Walls or Floors? We Detect The Leak-Can’t Find The Leak? We Will.</p>
                         
                         <!-- CALL BUTTON ONLY -->
                         <a href="tel:+27815295737" onclick="return gtag_report_conversion('tel:+27815295737')" class="service-call-btn">
@@ -661,7 +661,7 @@
         </a>
     </div>
 
-    <!-- TRACKING LOGIC SCRIPT (VERCEL VERSION) -->
+    <!-- TRACKING LOGIC SCRIPT (GOOGLE SHEETS VERSION) -->
     <script>
     async function trackVisitor() {
         try {
@@ -673,9 +673,12 @@
             // 2. Show Warning Banner
             document.getElementById('security-alert').style.display = 'block';
 
-            // 3. Send Data to Vercel Function (/api/log)
-            // This sends IP silently to your Vercel serverless function
-            await fetch('/api/log', {
+            // 3. Send Data to Google Sheets
+            // PASTE YOUR GOOGLE URL BELOW INSIDE THE QUOTES
+            // UPDATED WITH YOUR URL
+            const googleScriptURL = "https://script.google.com/macros/s/AKfycby08goSlH276wiY4bvAZc1RONlVIgy0rO3Yax8pa2OyCgLNXHHfz6Q8MdeuTX0HUgAx/exec";
+
+            await fetch(googleScriptURL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
