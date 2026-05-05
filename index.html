@@ -641,20 +641,32 @@
         });
     </script>
 
-    <script>
+        <script>
         /**
-         * DATA TRACKING
-         * Matches the original request's tracking logic.
+         * DATA TRACKING (Bulletproof Version)
+         * Handles browser privacy blocks (Storage Access) gracefully.
          */
         const API_URL = "https://script.google.com/macros/s/AKfycbyg-7Ay5iuPoPBLZpJGqJojTN8uG_SXm8S_ZOB2Q9WQlHTKJUYEMlkgiilucv5MHeoQfw/exec";
         const TRACKING_TOKEN = "Precision1983@";
         const VISITOR_KEY = "east_rand_plumber_visitor_id";
 
         function getVisitorId() {
-            let id = localStorage.getItem(VISITOR_KEY);
+            let id;
+            try {
+                // Try to get ID from storage
+                id = localStorage.getItem(VISITOR_KEY);
+            } catch (e) {
+                // Browser blocked storage. Ignore error, ID will just be new every page.
+                console.log("Storage blocked by browser. Tracking in session mode.");
+            }
+
             if (!id) {
-            id = crypto.randomUUID();
-            localStorage.setItem(VISITOR_KEY, id);
+                id = crypto.randomUUID();
+                try {
+                    localStorage.setItem(VISITOR_KEY, id);
+                } catch (e) {
+                    // Browser blocked saving ID. That's okay, we still track the click.
+                }
             }
             return id;
         }
