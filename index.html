@@ -4,26 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>24/7 Emergency Plumber East Rand | Fast Local Plumbing</title>
     <meta name="description" content="Local plumber in Springs, Benoni, Boksburg, Brakpan & Germiston. Fast 24/7 response for burst pipes, blocked drains & geyser repairs.">
-    
-    <!-- Fonts & Icons -->
+
+    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Analytics & Tracking (Preserved from original) -->
+    <!-- Google Tag Manager (Global Site Tag) & Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18107368407"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+
       gtag('config', 'AW-18107368407');
       gtag('config', 'G-BV4PSWE9HK');
     </script>
-    
-    <!-- Tawk.to (Preserved) -->
+
+    <!-- Tawk.to Live Chat -->
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
@@ -36,7 +37,7 @@
     })();
     </script>
 
-    <!-- Schema.org -->
+    <!-- SCHEMA MARKUP -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -53,7 +54,9 @@
       },
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        ],
         "opens": "00:00",
         "closes": "23:59"
       },
@@ -62,365 +65,387 @@
     </script>
 
     <style>
-        /* --- CSS VARIABLES & RESET --- */
+        /* --- RESET & VARIABLES --- */
         :root {
-            --primary-blue: #0284c7;
+            --primary-blue: #0284c7; 
             --primary-dark: #0c4a6e;
             --primary-light: #e0f2fe;
-            --accent-green: #25D366;
+            --accent-green: #25D366; 
             --text-dark: #1e293b;
             --text-light: #64748b;
             --bg-light: #f8fafc;
             --white: #ffffff;
-            --danger: #ef4444;
-            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            --radius: 16px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
         }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 20px;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             background: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
-            overflow-x: hidden;
-            padding-bottom: 80px; /* Space for mobile sticky bar */
+            padding-bottom: 80px; /* Space for sticky footer */
         }
 
-        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
-        img { max-width: 100%; display: block; }
 
-        /* --- UTILITIES & ANIMATIONS --- */
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 2; }
-        
+        /* --- SECURITY ALERT STYLES --- */
+        #security-alert {
+            background-color: #000000;
+            color: #ffcccc;
+            text-align: center;
+            padding: 8px 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #ff0000;
+            z-index: 10000;
+            position: relative;
+            display: none; /* Hidden by default until JS loads */
+        }
+        #security-alert strong {
+            color: #ff4d4d;
+            margin-right: 5px;
+        }
+
+        /* --- UTILITIES --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .icon-svg {
+            width: 1.2em;
+            height: 1.2em;
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+        /* --- TOP BAR --- */
+        .topbar {
+            background: var(--primary-dark);
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            position: relative;
+            min-height: 550px; 
+            /* Gradient overlay for text readability */
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.4)),
+                        url("https://i.imgur.com/dwp0iRa.png") center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-logo {
+            max-width: 180px; 
+            height: auto;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.95);
+            padding: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.1;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: #e2e8f0;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+        }
+
+        .hero-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            max-width: 350px;
+        }
+
+        /* --- BUTTONS --- */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            padding: 16px 32px;
+            padding: 16px 28px;
             border-radius: 50px;
             font-weight: 700;
             font-size: 1.1rem;
-            cursor: pointer;
-            box-shadow: var(--shadow-md);
             transition: var(--transition);
-            border: none;
-            width: 100%;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .btn:active { transform: scale(0.98); }
 
-        .btn-primary { background: var(--white); color: var(--primary-dark); }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); background: #f8fafc; }
-        
-        .btn-whatsapp { background: var(--accent-green); color: white; }
-        .btn-whatsapp:hover { background: #1ebc57; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); }
+        .btn-call { background: var(--white); color: var(--primary-dark); }
+        .btn-call:hover { background: #f1f5f9; transform: translateY(-2px); }
+        .btn-call svg { stroke: var(--primary-dark); } 
 
-        /* Animation Classes */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .fade-in-up.visible { opacity: 1; transform: translateY(0); }
-
-        /* --- HEADER & TOP BAR --- */
-        .topbar {
-            background: var(--primary-dark);
-            color: white;
-            text-align: center;
-            padding: 12px 20px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            position: relative;
-            z-index: 10;
-        }
-        
-        .topbar i { color: #fbbf24; margin-right: 8px; animation: pulse 2s infinite; }
-
-        .hero {
-            position: relative;
-            min-height: 85vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(12, 74, 110, 0.8)), 
-                        url('https://picsum.photos/seed/plumbing123/1920/1080') center/cover no-repeat;
-            color: white;
-            padding: 40px 20px 100px; /* Extra padding bottom for wave */
-            overflow: hidden;
-        }
-
-        .hero-content { max-width: 800px; z-index: 2; }
-        
-        .hero-logo {
-            max-width: 160px;
-            margin-bottom: 24px;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
-            border-radius: 12px;
-            padding: 8px;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem);
-            font-weight: 800;
-            margin-bottom: 16px;
-            line-height: 1.1;
-            text-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            letter-spacing: -1px;
-        }
-
-        .hero p { font-size: 1.2rem; color: #e2e8f0; margin-bottom: 40px; opacity: 0.9; }
-
-        .hero-btns {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            width: 100%;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        /* Wave Animation (The "Animation Engineer" Touch) */
-        .wave-container {
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            width: 100%;
-            overflow: hidden;
-            line-height: 0;
-            z-index: 1;
-        }
-        .wave-svg { position: relative; display: block; width: calc(100% + 1.3px); height: 80px; }
-        .wave-path { fill: var(--bg-light); }
+        .btn-wa { background: var(--accent-green); color: white; }
+        .btn-wa:hover { background: #1ebc57; transform: translateY(-2px); }
+        .btn-wa svg { fill: white; } 
 
         /* --- TRUST STRIP --- */
         .trust-strip {
-            background: var(--white);
+            background: white;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            padding: 30px 20px;
             text-align: center;
+            padding: 20px;
             border-bottom: 1px solid #e2e8f0;
-            box-shadow: var(--shadow-sm);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-light);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .trust-item { display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .trust-item svg { color: #f59e0b; flex-shrink: 0; }
+
+        /* --- SECTIONS --- */
+        .section { padding: 60px 0; }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 45px;
         }
 
-        .trust-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: 8px;
-            font-weight: 700;
+        .section-header h2 {
+            font-size: 2rem;
             color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
             font-size: 1.1rem;
         }
 
-        .trust-item i { font-size: 1.5rem; color: #f59e0b; margin-bottom: 5px; }
+        /* --- ICON STYLES --- */
+        .real-icon-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 12px; 
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            border: 2px solid white;
+            background-color: #fff;
+        }
 
-        /* --- SECTIONS --- */
-        .section { padding: 80px 0; }
-        .section-header { text-align: center; margin-bottom: 60px; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .section-header h2 { font-size: 2.2rem; color: var(--primary-dark); margin-bottom: 16px; font-weight: 800; }
-        .section-header p { color: var(--text-light); font-size: 1.1rem; }
-        
         /* --- SERVICES GRID --- */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
 
         .service-card {
-            background: var(--white);
-            padding: 40px 30px;
+            background: white;
+            padding: 35px 25px;
             border-radius: var(--radius);
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow);
             text-align: center;
-            transition: var(--transition);
             border: 1px solid #f1f5f9;
+            transition: var(--transition);
             display: flex;
             flex-direction: column;
             align-items: center;
-            position: relative;
-            overflow: hidden;
+            height: 100%;
         }
 
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 4px;
-            background: var(--primary-blue);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
+        .service-card:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        .service-card:hover { 
-            transform: translateY(-10px); 
-            box-shadow: var(--shadow-lg);
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--text-dark);
         }
-        
-        .service-card:hover::before { transform: scaleX(1); }
 
-        .icon-box {
-            width: 80px; height: 80px;
-            background: var(--primary-light);
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            margin-bottom: 24px;
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        /* UPDATED SERVICE BUTTON STYLING */
+        .service-call-btn {
+            margin-top: auto; /* Pushes button to bottom */
+            font-size: 0.9rem;
             color: var(--primary-blue);
-            font-size: 32px;
-            transition: var(--transition);
-        }
-
-        .service-card:hover .icon-box { background: var(--primary-blue); color: white; transform: rotateY(360deg); }
-
-        .service-card h3 { font-size: 1.4rem; margin-bottom: 12px; color: var(--text-dark); }
-        .service-card p { font-size: 0.95rem; color: var(--text-light); margin-bottom: 24px; line-height: 1.6; }
-
-        .service-link {
-            margin-top: auto;
             font-weight: 700;
-            color: var(--primary-blue);
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            display: flex; align-items: center; gap: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: var(--primary-light);
+            border-radius: 20px;
+            transition: background 0.2s;
+            width: 100%; /* Full width for easy tapping */
+            max-width: 200px;
         }
-        .service-link i { transition: transform 0.3s; }
-        .service-card:hover .service-link i { transform: translateX(5px); }
-
-        /* Emergency Card Variant */
-        .service-card.emergency { border: 2px solid var(--danger); background: #fef2f2; }
-        .service-card.emergency::before { background: var(--danger); }
-        .service-card.emergency .icon-box { background: #fee2e2; color: var(--danger); }
-        .service-card.emergency:hover .icon-box { background: var(--danger); color: white; }
-        .service-card.emergency h3 { color: #991b1b; }
         
-        .pulse-badge {
-            position: absolute; top: 20px; right: 20px;
-            background: var(--danger); color: white;
-            font-size: 0.7rem; font-weight: 700; padding: 4px 10px;
-            border-radius: 20px; text-transform: uppercase;
-            animation: pulse 2s infinite;
+        .service-card:hover .service-call-btn { 
+            background: #bae6fd; 
+            color: #0369a1;
+        }
+        
+        .service-call-btn svg { 
+            stroke: currentColor; 
         }
 
-        /* --- FEATURES --- */
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; }
+        /* Emergency Card Highlight */
+        .service-card.emergency {
+            background: #eff6ff;
+            border: 2px solid var(--primary-blue);
+        }
+        .service-card.emergency h3 { color: var(--primary-blue); }
+        .service-card.emergency .service-call-btn {
+            background: var(--primary-blue);
+            color: white;
+        }
+        .service-card.emergency:hover .service-call-btn {
+            background: var(--primary-dark);
+        }
+
+        /* --- WHY CHOOSE US --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
         .feature-box {
             background: white;
-            padding: 30px;
+            padding: 30px 20px;
             border-radius: var(--radius);
-            box-shadow: var(--shadow-sm);
             text-align: center;
+            box-shadow: var(--shadow);
             transition: var(--transition);
         }
-        .feature-box:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
-        .feature-box i { font-size: 2rem; color: var(--primary-blue); margin-bottom: 16px; }
-        .feature-box h4 { margin-bottom: 10px; color: var(--text-dark); font-size: 1.2rem; }
+        
+        .feature-box:hover { transform: translateY(-3px); }
+
+        .feature-box h4 { margin-bottom: 8px; color: var(--text-dark); font-size: 1.1rem; }
         .feature-box p { font-size: 0.9rem; color: var(--text-light); }
 
         /* --- CTA SECTION --- */
         .cta-section {
-            background: linear-gradient(135deg, var(--primary-dark), #1e293b);
+            background: linear-gradient(135deg, var(--primary-dark), #0f172a);
             color: white;
             text-align: center;
-            border-radius: 24px;
-            margin: 60px auto;
-            padding: 80px 20px;
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            overflow: hidden;
+            border-radius: 20px;
+            margin: 40px auto;
+            padding: 60px 20px;
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
         }
         
-        /* Abstract animated background circles */
-        .cta-section::before, .cta-section::after {
-            content: '';
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.05);
+        .cta-section h2 { margin-bottom: 15px; font-size: 2.2rem; }
+        .cta-section p { margin-bottom: 30px; opacity: 0.9; font-size: 1.1rem; }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 50px 20px 100px 20px; /* Extra bottom padding for mobile sticky nav */
+            font-size: 0.9rem;
+            border-top: 1px solid #1e293b;
         }
-        .cta-section::before { width: 300px; height: 300px; top: -100px; left: -100px; animation: float 10s infinite ease-in-out; }
-        .cta-section::after { width: 200px; height: 200px; bottom: -50px; right: -50px; animation: float 15s infinite ease-in-out reverse; }
-
-        .cta-section h2 { font-size: 2.5rem; margin-bottom: 16px; position: relative; z-index: 2; }
-        .cta-section p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 40px; position: relative; z-index: 2; }
         
-        /* --- FOOTER & STICKY BAR --- */
-        footer { background: #0f172a; color: #94a3b8; text-align: center; padding: 60px 20px 120px 20px; border-top: 1px solid #1e293b; }
-        footer p { margin-bottom: 15px; font-size: 0.9rem; }
-        footer a { color: #cbd5e1; margin: 0 10px; transition: color 0.3s; text-decoration: none; border-bottom: 1px dotted #475569; }
-        footer a:hover { color: white; border-color: white; }
+        footer p { margin-bottom: 10px; }
+        footer a { color: #cbd5e1; margin: 0 10px; text-decoration: underline; text-underline-offset: 4px; }
 
+        /* --- STICKY MOBILE FOOTER --- */
         .sticky-footer {
-            position: fixed; bottom: 0; left: 0; width: 100%;
-            display: flex; z-index: 1000;
-            box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
-            transform: translateY(0);
-            transition: transform 0.3s;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            z-index: 9999;
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.15);
         }
 
         .sticky-btn {
             flex: 1;
-            padding: 18px;
+            padding: 16px;
             text-align: center;
-            font-weight: 800;
+            font-weight: 700;
             font-size: 1rem;
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: background 0.3s;
+            letter-spacing: 0.5px;
         }
 
         .sticky-call { background: var(--primary-blue); }
-        .sticky-call:hover { background: #0369a1; }
         .sticky-wa { background: var(--accent-green); }
-        .sticky-wa:hover { background: #16a34a; }
+        .sticky-wa svg { fill: white; }
 
-        /* --- KEYFRAMES --- */
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
-        }
-
-        @keyframes float {
-            0% { transform: translate(0, 0); }
-            50% { transform: translate(20px, 40px); }
-            100% { transform: translate(0, 0); }
-        }
-
-        /* --- MEDIA QUERIES --- */
+        /* --- RESPONSIVE QUERIES --- */
         @media (min-width: 768px) {
-            .hero-btns { flex-direction: row; justify-content: center; max-width: 550px; }
-            .btn { width: auto; min-width: 220px; }
+            .hero-btns { flex-direction: row; justify-content: center; max-width: 600px; }
+            .btn { width: 250px; }
+            
+            /* Hide sticky footer on desktop for cleaner UI */
             .sticky-footer { display: none; }
-            footer { padding-bottom: 60px; }
+            footer { padding-bottom: 50px; }
             body { padding-bottom: 0; }
         }
     </style>
     
-    <!-- Conversion Script -->
+    <!-- CONVERSION TRACKING SCRIPT -->
     <script>
     function gtag_report_conversion(url) {
       var callback = function () {
-        if (typeof(url) != 'undefined') { window.location = url; }
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
       };
       gtag('event', 'conversion', {
           'send_to': 'AW-18107368407/V7qMCIHut6McENeHorpD',
@@ -432,171 +457,189 @@
 </head>
 <body>
 
-    <!-- Top Bar -->
+    <!-- TRACKING WARNING BANNER (UPDATED WORDING) -->
+    <div id="security-alert">
+        Competitors click-fraud are monitored.
+    </div>
+
     <div class="topbar">
-        <i class="fa-solid fa-bolt"></i>
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor" style="fill: #fbbf24;"><path d="M13 2L3 14h9l-1 8h10L21 8h-9l1-8z"></path></svg>
         24/7 Emergency Plumber • Fast Response Within 60 Minutes
     </div>
 
-    <!-- Hero Section -->
+    <!-- HEADER / HERO -->
     <header class="hero">
-        <div class="hero-content fade-in-up">
-            <img src="https://i.imgur.com/RYp7d8I.png" alt="East Rand Plumbers Logo" class="hero-logo">
-            <h1>LOCAL PLUMBERS<br>IN YOUR AREA NOW</h1>
-            <p>Fast, reliable local plumbing in Springs, Benoni, Boksburg, Brakpan & Germiston.</p>
-            
-            <div class="hero-btns">
-                <a href="tel:+27815295737" onclick="return gtag_report_conversion('tel:+27815295737')" class="btn btn-primary" aria-label="Call Now">
-                    <i class="fa-solid fa-phone"></i> Call Now
-                </a>
-                <a href="https://wa.me/27815295737" target="_blank" class="btn btn-whatsapp" aria-label="WhatsApp Us">
-                    <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
-                </a>
-            </div>
-        </div>
-
-        <!-- Animated Wave SVG -->
-        <div class="wave-container">
-            <svg class="wave-svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path class="wave-path" d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
-            </svg>
+        <img src="https://i.imgur.com/RYp7d8I.png" alt="East Rand Plumbers Logo" class="hero-logo">
+        
+        <h1>LOCAL PLUMBERS<br>IN YOUR AREA NOW</h1>
+        <p>Fast, reliable local plumbing in Springs, Benoni, Boksburg, Brakpan & Germiston.</p>
+        
+        <div class="hero-btns">
+            <!-- Updated with onclick tracking -->
+            <a href="tel:+27815295737" onclick="return gtag_report_conversion('tel:+27815295737')" class="btn btn-call" aria-label="Call Now">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                Call Now
+            </a>
+            <a href="https://wa.me/27815295737" target="_blank" class="btn btn-wa" aria-label="WhatsApp Us">
+                <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                WhatsApp Us
+            </a>
         </div>
     </header>
 
-    <!-- Trust Strip -->
+    <!-- TRUST SIGNALS -->
     <div class="trust-strip">
-        <div class="trust-item fade-in-up">
-            <i class="fa-solid fa-star"></i>
-            <span>4.8/5 Rating</span>
+        <div class="trust-item">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            4.8/5 Rating
         </div>
-        <div class="trust-item fade-in-up" style="transition-delay: 100ms;">
-            <i class="fa-solid fa-check-circle"></i>
-            <span>800+ Jobs Done</span>
+        <div class="trust-item">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            800+ Jobs Done
         </div>
-        <div class="trust-item fade-in-up" style="transition-delay: 200ms;">
-            <i class="fa-solid fa-clock"></i>
-            <span>60 Min Response</span>
+        <div class="trust-item">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            60 Min Response
         </div>
     </div>
 
     <main>
-        <!-- Services Section -->
+        <!-- SERVICES -->
         <section class="section">
             <div class="container">
-                <div class="section-header fade-in-up">
+                <div class="section-header">
                     <h2>Our Plumbing Services</h2>
-                    <p>Select a service below for immediate assistance.</p>
+                    <p>Tap a service below to get immediate assistance.</p>
                 </div>
-
+                
                 <div class="services-grid">
-                    <!-- Blocked Drains -->
-                    <div class="service-card fade-in-up">
-                        <div class="icon-box"><i class="fa-solid fa-ban"></i></div>
+                    <!-- SITELINK 1: Blocked Drains -->
+                    <div class="service-card" id="blockeddrain">
+                        <img src="https://cdn.create.vista.com/api/media/small/328092516/stock-photo-cropped-view-plumber-holding-plunger-toilet" alt="Blocked Drain Pipe" class="real-icon-img" width="70" height="70" loading="lazy">
                         <h3>Blocked Drains</h3>
-                        <p>Expert Drain Unblocking – All Blockages Cleared. Professional Drain Cleaning Services with 24/7 Fast Response.</p>
-                        <a href="tel:+27815295737" onclick="return gtag_report_conversion('tel:+27815295737')" class="service-link">
-                            Call Now <i class="fa-solid fa-arrow-right"></i>
+                        <p>Blocked Drain Specialists – Fast & Effective Solutions-Expert Drain Unblocking – All Blockages Cleared-Professional Drain Cleaning Services-24/7 Blocked Drain Service – Fast Response Guaranteed.</p>
+                        
+                        <!-- CALL BUTTON ONLY -->
+                        <a href="tel:+27815295737" onclick="return gtag_report_conversion('tel:+27815295737')" class="service-call-btn">
+                            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            Call Now
                         </a>
                     </div>
 
-                    <!-- Burst Pipes -->
-                    <div class="service-card fade-in-up" style="transition-delay: 100ms;">
-                        <div class="icon-box"><i class="fa-solid fa-faucet-drip"></i></div>
+                    <!-- SITELINK 2: Burst Pipes -->
+                    <div class="service-card" id="burstpipes">
+                        <img src="https://cdn.create.vista.com/api/media/medium/331448642/stock-photo-residential-water-pipe-break-repair-white-tape?token=" alt="Leaking Pipe" class="real-icon-img" width="70" height="70" loading="lazy">
                         <h3>Burst Pipes</h3>
-                        <p>24/7 Burst Pipe Repairs & Same-Day Leak Fixes. Reliable, affordable service to stop water damage immediately.</p>
-                        <a href="tel:+27815295737" onclick="return gtag_report_conversion('tel:+27815295737')" class="service-link">
-                            Call Now <i class="fa-solid fa-arrow-right"></i>
+                        <p>24/7 Burst Pipe Repairs – Fast Response Guaranteed-Same-Day Pipe Repairs – Reliable & Affordable-Emergency Leak Repairs – Fixed First Time-Burst Pipe Repairs – Fast & Reliable Service.</p>
+                        
+                        <!-- CALL BUTTON ONLY -->
+                        <a href="tel:+27815295737" onclick="return gtag_report_conversion('tel:+27815295737')" class="service-call-btn">
+                            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            Call Now
                         </a>
                     </div>
 
-                    <!-- Geyser Repairs -->
-                    <div class="service-card fade-in-up" style="transition-delay: 200ms;">
-                        <div class="icon-box"><i class="fa-solid fa-fire-burner"></i></div>
-                        <h3>Geyser Repairs</h3>
-                        <p>Trusted Geyser Repairs – Fast Response & Guaranteed Work. We fix elements, thermostats, and leaks.</p>
-                        <a href="tel:+27815295737" onclick="return gtag_report_conversion('tel:+27815295737')" class="service-link">
-                            Call Now <i class="fa-solid fa-arrow-right"></i>
+                    <!-- SITELINK 3: Geyser Repairs -->
+                    <div class="service-card" id="geysers">
+                        <img src="https://cdn.create.vista.com/api/media/small/396455554/stock-photo-flange-installation-boiler-housing-details-home-water-heater-hand-tools" alt="Geyser Element Burner" class="real-icon-img" width="70" height="70" loading="lazy">
+                        <h3>Emergency Geyser Repairs</h3>
+                        <p>Local Plumber, Trusted Geyser Repairs – Fast Response, Guaranteed Work, Same-Day Geyser Repairs by Experienced Plumber, 24/7 Geyser Repairs – We Fix It First Time.</p>
+                        
+                        <!-- CALL BUTTON ONLY -->
+                        <a href="tel:+27815295737" onclick="return gtag_report_conversion('tel:+27815295737')" class="service-call-btn">
+                            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            Call Now
                         </a>
                     </div>
 
-                    <!-- Leak Detection -->
-                    <div class="service-card fade-in-up" style="transition-delay: 300ms;">
-                        <div class="icon-box"><i class="fa-solid fa-magnifying-glass-location"></i></div>
+                    <!-- SITELINK 4: Leak Detection -->
+                    <div class="service-card" id="leakdetection">
+                        <img src="https://cdn.create.vista.com/api/media/small/757339372/stock-photo-tap-dripping-leakage-garden" alt="Water Tap Leak" class="real-icon-img" width="70" height="70" loading="lazy">
                         <h3>Leak Detection</h3>
-                        <p>Accurate, Non-Invasive Leak Detection. We find hidden leaks fast to save you money on water bills.</p>
-                        <a href="tel:+27815295737" onclick="return gtag_report_conversion('tel:+27815295737')" class="service-link">
-                            Call Now <i class="fa-solid fa-arrow-right"></i>
+                        <p>Accurate Leak Detection – Fast & Non-Invasive-High Water Bill? We Find Hidden Leaks Fast-Damp Walls or Floors? We Detect The Leak-Can’t Find The Leak? We Will.</p>
+                        
+                        <!-- CALL BUTTON ONLY -->
+                        <a href="tel:+27815295737" onclick="return gtag_report_conversion('tel:+27815295737')" class="service-call-btn">
+                            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            Call Now
                         </a>
                     </div>
 
-                    <!-- Toilet Repairs -->
-                    <div class="service-card fade-in-up" style="transition-delay: 400ms;">
-                        <div class="icon-box"><i class="fa-solid fa-toilet"></i></div>
+                    <!-- SITELINK 5: Toilet Repairs -->
+                    <div class="service-card" id="toiletrepairs">
+                        <img src="https://cdn.create.vista.com/api/media/small/81517178/stock-photo-repair-broken-toilet" alt="Modern Toilet" class="real-icon-img" width="70" height="70" loading="lazy">
                         <h3>Toilet Repairs</h3>
-                        <p>Broken, blocked, or overflowing toilets? We fix it today with no mess. Same-Day Toilet Repairs available.</p>
-                        <a href="tel:+27815295737" onclick="return gtag_report_conversion('tel:+27815295737')" class="service-link">
-                            Call Now <i class="fa-solid fa-arrow-right"></i>
+                        <p>Broken Toilet? We Fix It Today – Call Now-Toilet Not Flushing? Get It Fixed Fast-Blocked Toilet? We Clear It Fast-Overflowing Toilet? We’re On Our Way-Same-Day Toilet Repairs – No Mess.</p>
+                        
+                        <!-- CALL BUTTON ONLY -->
+                        <a href="tel:+27815295737" onclick="return gtag_report_conversion('tel:+27815295737')" class="service-call-btn">
+                            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            Call Now
                         </a>
                     </div>
 
-                    <!-- Emergency -->
-                    <div class="service-card emergency fade-in-up" style="transition-delay: 500ms;">
-                        <div class="pulse-badge">Urgent</div>
-                        <div class="icon-box"><i class="fa-solid fa-truck-medical"></i></div>
-                        <h3>24/7 Emergency</h3>
-                        <p>Priority response for plumbing crises. Burst Geyser, Pipes, or Major Blockages. Fast Response Guaranteed.</p>
-                        <a href="tel:+27815295737" onclick="return gtag_report_conversion('tel:+27815295737')" class="service-link" style="color: var(--danger);">
-                            Emergency Call <i class="fa-solid fa-arrow-right"></i>
+                    <!-- SITELINK 6: 24/7 Emergency -->
+                    <div class="service-card emergency" id="emergency">
+                        <img src="https://cdn.create.vista.com/api/media/small/515052014/stock-vector-24-7-service-concept-24-7-open-neon-icon-support-service-icon-vector-stock-illustration" alt="Emergency Lights" class="real-icon-img" width="70" height="70" loading="lazy">
+                        <h3>24/7 Emergency Plumber Near You</h3>
+                        <p>Priority response for plumbing crises. Burst Geyser Repairs, Burst Pipes, Blocked Drain, Leaking Geyser or Blocked Drain-24 Hour Service – Fast Response Guaranteed.</p>
+                        
+                        <!-- CALL BUTTON ONLY -->
+                        <a href="tel:+27815295737" onclick="return gtag_report_conversion('tel:+27815295737')" class="service-call-btn">
+                            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            Call Now
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Features Section -->
+        <!-- WHY CHOOSE US -->
         <section class="section" style="background: white;">
             <div class="container">
-                <div class="section-header fade-in-up">
+                <div class="section-header">
                     <h2>Why Choose Us</h2>
-                    <p>We combine speed, quality, and fair pricing.</p>
                 </div>
                 <div class="features-grid">
-                    <div class="feature-box fade-in-up">
-                        <i class="fa-solid fa-clock"></i>
+                    <div class="feature-box">
+                        <img src="https://cdn.create.vista.com/api/media/small/38761529/stock-photo-24h-service-icon" alt="Clock 24/7" class="real-icon-img" width="70" height="70" loading="lazy">
                         <h4>24/7 Availability</h4>
                         <p>We don't sleep so you can.</p>
                     </div>
-                    <div class="feature-box fade-in-up" style="transition-delay: 100ms;">
-                        <i class="fa-solid fa-map-pin"></i>
-                        <h4>Local & Fast</h4>
-                        <p>Under 60 Minutes Response Time in East Rand.</p>
+                    <div class="feature-box">
+                        <img src="https://cdn.create.vista.com/api/media/small/647488706/stock-vector-support-local-business-rubber-grunge-stamp-seal-vector" alt="Certified Plumber" class="real-icon-img" width="70" height="70" loading="lazy">
+                        <h4>Local Plumber</h4>
+                        <p>Local Plumber Near You - Fast under 60 Minutes Response Time.</p>
                     </div>
-                    <div class="feature-box fade-in-up" style="transition-delay: 200ms;">
-                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    <div class="feature-box">
+                        <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&w=200&q=80" alt="Fair Pricing Money" class="real-icon-img" width="70" height="70" loading="lazy">
                         <h4>Fair Pricing</h4>
-                        <p>No call-out fees. No hidden costs.</p>
+                        <p>No hidden Costs- No call-out fees-We Beat Any Price, Guaranteed.</p>
                     </div>
-                    <div class="feature-box fade-in-up" style="transition-delay: 300ms;">
-                        <i class="fa-solid fa-certificate"></i>
-                        <h4>Guaranteed Work</h4>
-                        <p>We fix it right the first time.</p>
+                    <div class="feature-box">
+                        <img src="https://cdn.create.vista.com/api/media/small/190367906/stock-vector-express-delivery-guarantee-label-vector-illustration" alt="Plumbing Van" class="real-icon-img" width="70" height="70" loading="lazy">
+                        <h4>Service within 60-Minutes</h4>
+                        <p>Local plumbers mean FAST SERVICE.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
+        <!-- BIG CTA -->
         <div class="container">
-            <section class="cta-section fade-in-up">
+            <section class="cta-section">
                 <h2>Plumbing Emergency?</h2>
                 <p>Don't wait, water damage gets worse every minute.</p>
-                <a href="tel:+27815295737" onclick="return gtag_report_conversion('tel:+27815295737')" class="btn btn-primary" aria-label="Call Now">
-                     <i class="fa-solid fa-phone"></i> Call +27815295737
+                <!-- Updated with onclick tracking -->
+                <a href="tel:+27815295737" onclick="return gtag_report_conversion('tel:+27815295737')" class="btn btn-call" style="background: white; color: var(--primary-dark);" aria-label="Call Now">
+                     <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    Call +27815295737
                 </a>
             </section>
         </div>
     </main>
 
+    <!-- FOOTER -->
     <footer>
         <p>&copy; 2026 East Rand Emergency Plumbing. All rights reserved.</p>
         <p>
@@ -605,138 +648,70 @@
         </p>
     </footer>
 
-    <!-- Sticky Footer (Mobile Only) -->
+    <!-- STICKY MOBILE FOOTER (Hidden on Desktop) -->
     <div class="sticky-footer">
+        <!-- Updated with onclick tracking -->
         <a href="tel:+27815295737" onclick="return gtag_report_conversion('tel:+27815295737')" class="sticky-btn sticky-call" aria-label="Call Now">
-             <i class="fa-solid fa-phone"></i> CALL NOW
+             <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            CALL NOW
         </a>
         <a href="https://wa.me/27815295737" target="_blank" class="sticky-btn sticky-wa" aria-label="WhatsApp Us">
-             <i class="fa-brands fa-whatsapp"></i> WHATSAPP
+             <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            WHATSAPP
         </a>
     </div>
 
-        <!-- Scripts -->
-    <script>
-        /**
-         * ANIMATION OBSERVER
-         * Triggers the fade-in-up animation when elements scroll into view.
-         */
-        document.addEventListener("DOMContentLoaded", () => {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: "0px 0px -50px 0px"
-            };
+<!-- IP FRAUD TRACKING SNIPPET (UPDATED WITH DEVICE TRACKING FIX) -->
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+<script>
+    const SUPABASE_URL = 'https://prslkpfjbhqadcpaapms.supabase.co';
+    const SUPABASE_KEY = 'sb_publishable_LNWAsUHvnk5mUcFsqYSMWA_9ngV1k-9';
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target); // Only animate once
+    const adTracker = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    // ==============================
+    // DEVICE ID (NEW FIX)
+    // ==============================
+    function getDeviceID() {
+        let id = localStorage.getItem("device_id");
+
+        if (!id) {
+            id = 'dev-' + Math.random().toString(36).substring(2) + Date.now();
+            localStorage.setItem("device_id", id);
+        }
+
+        return id;
+    }
+
+    async function trackClick() {
+        try {
+            const res = await fetch('https://ipapi.co/json/');
+            const data = await res.json();
+
+            const device_id = getDeviceID();
+
+            await adTracker
+                .from('visitors')
+                .insert([
+                    {
+                        ip: data.ip,
+                        city: data.city,
+                        country: data.country_name,
+                        suburb: data.region,
+                        device_id: device_id,
+                        blocked: false
                     }
-                });
-            }, observerOptions);
+                ]);
 
-            const animatedElements = document.querySelectorAll('.fade-in-up');
-            animatedElements.forEach(el => observer.observe(el));
-        });
-    </script>
+            console.log("Tracked:", data.ip, device_id);
 
-        <script>
-        /**
-         * DATA TRACKING (Bulletproof Version)
-         * Handles browser privacy blocks (Storage Access) gracefully.
-         */
-        const API_URL = "https://script.google.com/macros/s/AKfycbyg-7Ay5iuPoPBLZpJGqJojTN8uG_SXm8S_ZOB2Q9WQlHTKJUYEMlkgiilucv5MHeoQfw/exec";
-        const TRACKING_TOKEN = "Precision1983@";
-        const VISITOR_KEY = "east_rand_plumber_visitor_id";
-
-        function getVisitorId() {
-            let id;
-            try {
-                // Try to get ID from storage
-                id = localStorage.getItem(VISITOR_KEY);
-            } catch (e) {
-                // Browser blocked storage. Ignore error, ID will just be new every page.
-                console.log("Storage blocked by browser. Tracking in session mode.");
-            }
-
-            if (!id) {
-                id = crypto.randomUUID();
-                try {
-                    localStorage.setItem(VISITOR_KEY, id);
-                } catch (e) {
-                    // Browser blocked saving ID. That's okay, we still track the click.
-                }
-            }
-            return id;
+        } catch (e) {
+            console.log("Tracking failed:", e);
         }
+    }
 
-        function getCampaignParams() {
-            const url = new URL(location.href);
-            return {
-            gclid: url.searchParams.get("gclid") || "",
-            utm_source: url.searchParams.get("utm_source") || "",
-            utm_medium: url.searchParams.get("utm_medium") || "",
-            utm_campaign: url.searchParams.get("utm_campaign") || ""
-            };
-        }
+    trackClick();
+</script>
 
-        function sendEvent(eventType, extra = {}) {
-            // Only send if API URL is configured
-            if(API_URL.includes("PASTE_YOUR")) return;
-
-            const payload = {
-            token: TRACKING_TOKEN,
-            eventType,
-            visitorId: getVisitorId(),
-            path: location.pathname + location.search,
-            pageTitle: document.title || "",
-            referrer: document.referrer || "",
-            landingUrl: location.href,
-            deviceType: /Mobi|Android/i.test(navigator.userAgent) ? "mobile" : "desktop",
-            language: navigator.language || "",
-            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone || "",
-            viewportWidth: window.innerWidth,
-            viewportHeight: window.innerHeight,
-            screenWidth: window.screen.width,
-            screenHeight: window.screen.height,
-            ...getCampaignParams(),
-            ...extra
-            };
-
-            const body = JSON.stringify(payload);
-
-            if (navigator.sendBeacon) {
-            navigator.sendBeacon(API_URL, new Blob([body], { type: "text/plain" }));
-            return;
-            }
-
-            fetch(API_URL, {
-            method: "POST",
-            mode: "no-cors",
-            headers: { "Content-Type": "text/plain;charset=UTF-8" },
-            body,
-            keepalive: true
-            }).catch(() => {});
-        }
-
-        function bindTracking() {
-            document.querySelectorAll('a[href^="tel:"]').forEach((el) => {
-            el.addEventListener("click", () => sendEvent("call_click", { isConversion: true }));
-            });
-
-            document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach((el) => {
-            el.addEventListener("click", () => sendEvent("message_click", { isConversion: true }));
-            });
-
-            document.querySelectorAll("form").forEach((form) => {
-            form.addEventListener("submit", () => sendEvent("form_submit", { isConversion: true }));
-            });
-        }
-
-        // Init tracking
-        sendEvent("pageview");
-        bindTracking();
-    </script>
 </body>
 </html>
